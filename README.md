@@ -49,3 +49,11 @@ To run Spark with Elasticsearch integration, you can connect to the Spark contai
 ```bash
 ./spark-3.5.4-bin-hadoop3/bin/pyspark --packages org.elasticsearch:elasticsearch-spark-30_2.12:8.17.1
 ```
+
+or 
+
+```bash
+./spark-3.5.4-bin-hadoop3/bin/spark-submit \
+  --packages org.elasticsearch:elasticsearch-spark-30_2.12:8.17.1 \
+  your_script.py
+```
