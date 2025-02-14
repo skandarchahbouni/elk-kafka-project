@@ -141,6 +141,7 @@ services:
       - logstashdata01:/usr/share/logstash/data
       - "./logstash_ingest_data/:/usr/share/logstash/ingest_data/"
       - "./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro"
+      - "./index-mapping.json:/usr/share/logstash/index-mapping.json:ro"
     environment:
       - xpack.monitoring.enabled=false
       - ELASTIC_USER=elastic
