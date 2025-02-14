@@ -9,7 +9,7 @@
 ## Part 2: Kafka  
 - The **[producer](./producer/)** fetches user activity data from a mock API and sends it to a Kafka topic (`users_activities`). It uses the Confluent Kafka producer to publish each activity as a JSON message, logging delivery reports. The script runs in a loop, sending one message per second while handling errors and ensuring all messages are flushed before exiting.
 - The consumer in our case is Logstash, as you can see in the [Logstash configuration file](./logstash.conf), we are using the Kafka input.
-```json
+```bash
 input {
   kafka {
     bootstrap_servers => "kafka:9093"  # Kafka broker address
