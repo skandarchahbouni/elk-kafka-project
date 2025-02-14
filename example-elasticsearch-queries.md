@@ -1,7 +1,7 @@
 ## 1 - TEXTUAL QUERIES
 
 ### Search for activities with a keyword in the description
-```json
+```bash
 GET /users-activities/_search
 {
   "query": {
@@ -13,7 +13,7 @@ GET /users-activities/_search
 ```
 
 ### Search for all login activities
-```json
+```bash
 GET /users-activities/_search
 {
   "query": {
@@ -27,7 +27,7 @@ GET /users-activities/_search
 ## 2 - AGGREGATION QUERIES
 
 ### Average Login Count
-```json
+```bash
 GET /users-activities/_search
 {
   "size": 0,
@@ -42,7 +42,7 @@ GET /users-activities/_search
 ```
 
 ### Top N Users by Login Count (Top 5 Users with Highest Login Count):
-```json
+```bash
 GET /users-activities/_search
 {
   "size": 0, 
@@ -70,7 +70,7 @@ GET /users-activities/_search
 ## 3 - N-GRAM QUERY
 
 ### 1. Create a New Index with the N-gram Analyzer
-```json
+```bash
 PUT /users-activities-v2
 {
   "mappings": {
@@ -103,7 +103,7 @@ PUT /users-activities-v2
 ```
 
 ### 2. Reindex Data from the Old Index to the New Index
-```json
+```bash
 POST /_reindex
 {
   "source": {
@@ -116,7 +116,7 @@ POST /_reindex
 ```
 
 ### 3. Search Query Example
-```json
+```bash
 GET /users-activities-v2/_search
 {
   "query": {
@@ -134,7 +134,7 @@ In this setup, the username field will be tokenized into n-grams, allowing for p
 ## 4 - FUZZY QUERIES
 
 ### Query Example (Fuzziness = 1)
-```json
+```bash
 GET /users-activities/_search
 {
   "query": {
@@ -149,7 +149,7 @@ GET /users-activities/_search
 ```
 
 ### Query Example (Fuzziness = 2)
-```json
+```bash
 GET /users-activities/_search
 {
   "query": {
@@ -165,7 +165,7 @@ GET /users-activities/_search
 
 ## 5 - Time series
 ### Date Histogram Aggregation
-```json
+```bash
 GET /users-activities/_search
 {
   "size": 0,  // We are only interested in aggregations, not actual hits
