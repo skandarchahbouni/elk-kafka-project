@@ -25,7 +25,7 @@ input {
 ## Part 3: Logstash & Elasticsearch  
 - Logstash configuration file: **[logstach.conf](./logstash.conf)**
 - Elasticsearch mapping: **[index-mapping.json](./index-mapping.json)** || **[screenshot](./screenshots/indexed_data/mapping.png)**
-- Screenshots of indexed data:  **[index-mapping.json](./screenshots/indexed_data/)**
+- Screenshots of indexed data:  **[screenshots](./screenshots/indexed_data/)**
 - Five queries: **[example-elasticsearch-queries.md](./example-elasticsearch-queries.md)**
 
 ## Part 4: Kibana  
